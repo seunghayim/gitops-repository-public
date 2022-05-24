@@ -1,3 +1,3 @@
 module "terraform_eks" {
-    source = ""
+  source = "git@github.com:langhae/platform-repository.git"
 }
