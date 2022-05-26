@@ -10,7 +10,7 @@ helm repo update
 helm search repo jenkinsci
 
 # Create SA / SC / PVC
-kubectl kustomize ../ | kubectl apply -f -
+kubectl kustomize ../manifest/ | kubectl apply -f -
 
 # Install jenkins
 chart=jenkinsci/jenkins
