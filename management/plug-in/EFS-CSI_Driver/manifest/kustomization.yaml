@@ -1,2 +1,2 @@
 resources:
-- git@github.com:langhae/management-repository.git//efs_csi_driver?ref=main
+- git@github.com:seunghayim/management-repository-public.git//efs_csi_driver?ref=main
