@@ -1,7 +1,11 @@
 #!/usr/bin/env sh
 
+
+# env variables
+cluster_name=$1
+
 eksctl create iamserviceaccount \
-  --cluster multi05-eks-cluster-terraform \
+  --cluster $cluster_name \
   --namespace default \
   --name xray-daemon \
   --attach-policy-arn  arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess \

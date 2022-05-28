@@ -1,7 +1,11 @@
 #!/usr/bin/env sh
 
+# env variables
+cluster_name=$1
+region_name=$2
+
 vpc_id=$(aws eks describe-cluster \
-    --name multi05-eks-cluster-terraform \
+    --name $cluster_name \
     --query "cluster.resourcesVpcConfig.vpcId" \
     --output text)
 
@@ -23,7 +27,7 @@ aws ec2 authorize-security-group-ingress \
     --cidr $cidr_range
 
 file_system_id=$(aws efs create-file-system \
-    --region ap-southeast-2 \
+    --region $region_name \
     --performance-mode generalPurpose \
     --query 'FileSystemId' \
     --output text)

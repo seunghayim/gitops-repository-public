@@ -1,8 +1,12 @@
 #!/usr/bin/env sh
 
+# env variables
+cluster_name=$1
+region_name=$2
+
 # Install Fluent-Bit
-ClusterName=multi05-eks-cluster-terraform
-RegionName=ap-southeast-2
+ClusterName=$cluster_name
+RegionName=$region_name
 FluentBitHttpPort='2020'
 FluentBitReadFromHead='Off'
 [[ ${FluentBitReadFromHead} = 'On' ]] && FluentBitReadFromTail='Off'|| FluentBitReadFromTail='On'

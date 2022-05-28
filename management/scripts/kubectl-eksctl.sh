@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# env variables
+cluster_name=$1
+
 # Install kubectl
 cd ~
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
@@ -20,7 +23,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 # kubectl update !
-aws eks update-kubeconfig --region ap-southeast-2 --name multi05-eks-cluster-terraform
+aws eks update-kubeconfig --region ap-southeast-2 --name $cluster_name
 
 # install helm
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh

@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
+# env variables
+cluster_name=$1
+
 vpc_id=$(aws eks describe-cluster \
-    --name multi05-eks-cluster-terraform \
+    --name $cluster_name \
     --query "cluster.resourcesVpcConfig.vpcId" \
     --output text)
 
